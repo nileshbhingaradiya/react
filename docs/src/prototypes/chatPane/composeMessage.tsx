@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {
-  Layout,
+  Flex,
   Input,
   toolbarButtonBehavior,
   toolbarBehavior,
@@ -12,11 +12,13 @@ import style from './chatProtoStyle'
 class ComposeMessage extends React.Component {
   public render() {
     return (
-      <Layout
+      <Flex
+        column
         role="region"
         aria-labelledby="chat-compose-reader-text"
-        vertical
-        start={
+        styles={{ padding: '16px 32px' }}
+      >
+        {
           <div>
             <div
               role="heading"
@@ -29,9 +31,8 @@ class ComposeMessage extends React.Component {
             {this.renderInput()}
           </div>
         }
-        main={this.renderToolbar()}
-        styles={{ padding: '16px 32px' }}
-      />
+        {this.renderToolbar()}
+      </Flex>
     )
   }
 

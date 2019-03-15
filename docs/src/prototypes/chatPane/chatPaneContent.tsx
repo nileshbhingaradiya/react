@@ -1,12 +1,12 @@
 import * as React from 'react'
 import Scrollbars from 'react-custom-scrollbars'
 import { Chat, Divider, Avatar } from '@stardust-ui/react'
+
+import { Props } from 'src/types'
 import { ChatData, ChatItemTypes, generateChatProps } from './services'
 import style from './chatProtoStyle'
 
-export interface ChatPaneContainerProps {
-  chat: ChatData
-}
+export type ChatPaneContainerProps = Props<{ chat: ChatData }>
 
 class ChatPaneContainer extends React.PureComponent<ChatPaneContainerProps> {
   public render() {
